@@ -11,7 +11,7 @@ variable "service_name" {
 }
 
 variable "plan" {
-  default = "startup-4"
+  default = "startup-8"
 }
 
 variable "db_name" {

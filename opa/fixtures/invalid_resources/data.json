@@ -1,34 +1,241 @@
 {
-  "format_version": "1.2",
-  "terraform_version": "1.5.1",
-  "variables": {
-    "cloud_name": {
-      "value": "google-europe-west1"
+  "plan": {
+    "format_version": "1.2",
+    "terraform_version": "1.5.1",
+    "variables": {
+      "cloud_name": {
+        "value": "google-europe-west1"
+      },
+      "db_name": {
+        "value": "mydb"
+      },
+      "plan": {
+        "value": "startup-4"
+      },
+      "project": {
+        "value": "hc-demo"
+      },
+      "service_name": {
+        "value": "pgdb-1"
+      }
     },
-    "db_name": {
-      "value": "mydb"
+    "planned_values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "aiven_pg.pg",
+            "mode": "managed",
+            "type": "aiven_pg",
+            "name": "pg",
+            "provider_name": "registry.terraform.io/aiven/aiven",
+            "schema_version": 1,
+            "values": {
+              "additional_disk_space": null,
+              "cloud_name": "google-europe-west1",
+              "disk_space": null,
+              "maintenance_window_dow": "monday",
+              "maintenance_window_time": "10:00:00",
+              "pg_user_config": [
+                {
+                  "additional_backup_regions": null,
+                  "admin_password": null,
+                  "admin_username": null,
+                  "backup_hour": null,
+                  "backup_minute": null,
+                  "enable_ipv6": null,
+                  "ip_filter": null,
+                  "ip_filter_object": [],
+                  "ip_filter_string": null,
+                  "migration": [],
+                  "pg": [
+                    {
+                      "autovacuum_analyze_scale_factor": null,
+                      "autovacuum_analyze_threshold": null,
+                      "autovacuum_freeze_max_age": null,
+                      "autovacuum_max_workers": null,
+                      "autovacuum_naptime": null,
+                      "autovacuum_vacuum_cost_delay": null,
+                      "autovacuum_vacuum_cost_limit": null,
+                      "autovacuum_vacuum_scale_factor": null,
+                      "autovacuum_vacuum_threshold": null,
+                      "bgwriter_delay": null,
+                      "bgwriter_flush_after": null,
+                      "bgwriter_lru_maxpages": null,
+                      "bgwriter_lru_multiplier": null,
+                      "deadlock_timeout": null,
+                      "default_toast_compression": null,
+                      "idle_in_transaction_session_timeout": 900,
+                      "jit": null,
+                      "log_autovacuum_min_duration": null,
+                      "log_error_verbosity": null,
+                      "log_line_prefix": null,
+                      "log_min_duration_statement": -1,
+                      "log_temp_files": null,
+                      "max_files_per_process": null,
+                      "max_locks_per_transaction": null,
+                      "max_logical_replication_workers": null,
+                      "max_parallel_workers": null,
+                      "max_parallel_workers_per_gather": null,
+                      "max_pred_locks_per_transaction": null,
+                      "max_prepared_transactions": null,
+                      "max_replication_slots": null,
+                      "max_slot_wal_keep_size": null,
+                      "max_stack_depth": null,
+                      "max_standby_archive_delay": null,
+                      "max_standby_streaming_delay": null,
+                      "max_wal_senders": null,
+                      "max_worker_processes": null,
+                      "pg_partman_bgw__dot__interval": null,
+                      "pg_partman_bgw__dot__role": null,
+                      "pg_stat_monitor__dot__pgsm_enable_query_plan": null,
+                      "pg_stat_monitor__dot__pgsm_max_buckets": null,
+                      "pg_stat_statements__dot__track": null,
+                      "temp_file_limit": null,
+                      "timezone": null,
+                      "track_activity_query_size": null,
+                      "track_commit_timestamp": null,
+                      "track_functions": null,
+                      "track_io_timing": null,
+                      "wal_sender_timeout": null,
+                      "wal_writer_delay": null
+                    }
+                  ],
+                  "pg_read_replica": null,
+                  "pg_service_to_fork_from": null,
+                  "pg_stat_monitor_enable": false,
+                  "pg_version": "15",
+                  "pgbouncer": [],
+                  "pglookout": [],
+                  "private_access": [],
+                  "privatelink_access": [],
+                  "project_to_fork_from": null,
+                  "public_access": [
+                    {
+                      "pg": true,
+                      "pgbouncer": null,
+                      "prometheus": false
+                    }
+                  ],
+                  "recovery_target_time": null,
+                  "service_to_fork_from": null,
+                  "shared_buffers_percentage": null,
+                  "static_ips": true,
+                  "synchronous_replication": null,
+                  "timescaledb": [],
+                  "variant": null,
+                  "work_mem": null
+                }
+              ],
+              "plan": "startup-4",
+              "project": "hc-demo",
+              "project_vpc_id": null,
+              "service_integrations": [],
+              "service_name": "pgdb-1",
+              "service_type": "pg",
+              "tag": [],
+              "termination_protection": null,
+              "timeouts": {
+                "create": "20m",
+                "default": null,
+                "delete": null,
+                "read": null,
+                "update": "15m"
+              }
+            },
+            "sensitive_values": {
+              "components": [],
+              "pg": [],
+              "pg_user_config": [
+                {
+                  "ip_filter_object": [],
+                  "migration": [],
+                  "pg": [
+                    {}
+                  ],
+                  "pgbouncer": [],
+                  "pglookout": [],
+                  "private_access": [],
+                  "privatelink_access": [],
+                  "public_access": [
+                    {}
+                  ],
+                  "timescaledb": []
+                }
+              ],
+              "service_integrations": [],
+              "static_ips": [],
+              "tag": [],
+              "timeouts": {}
+            }
+          },
+          {
+            "address": "aiven_pg_database.mydatabase",
+            "mode": "managed",
+            "type": "aiven_pg_database",
+            "name": "mydatabase",
+            "provider_name": "registry.terraform.io/aiven/aiven",
+            "schema_version": 0,
+            "values": {
+              "database_name": "mydb",
+              "lc_collate": null,
+              "lc_ctype": null,
+              "project": "hc-demo",
+              "service_name": "pgdb-1",
+              "termination_protection": false,
+              "timeouts": null
+            },
+            "sensitive_values": {}
+          },
+          {
+            "address": "aiven_static_ip.pg1",
+            "mode": "managed",
+            "type": "aiven_static_ip",
+            "name": "pg1",
+            "provider_name": "registry.terraform.io/aiven/aiven",
+            "schema_version": 0,
+            "values": {
+              "cloud_name": "google-europe-west1",
+              "project": "hc-demo",
+              "timeouts": null
+            },
+            "sensitive_values": {}
+          },
+          {
+            "address": "aiven_static_ip.pg2",
+            "mode": "managed",
+            "type": "aiven_static_ip",
+            "name": "pg2",
+            "provider_name": "registry.terraform.io/aiven/aiven",
+            "schema_version": 0,
+            "values": {
+              "cloud_name": "google-europe-west1",
+              "project": "hc-demo",
+              "timeouts": null
+            },
+            "sensitive_values": {}
+          }
+        ]
+      }
     },
-    "plan": {
-      "value": "startup-4"
-    },
-    "project": {
-      "value": "hc-demo"
-    },
-    "service_name": {
-      "value": "pgdb-1"
-    }
-  },
-  "planned_values": {
-    "root_module": {
-      "resources": [
-        {
-          "address": "aiven_pg.pg",
-          "mode": "managed",
-          "type": "aiven_pg",
-          "name": "pg",
-          "provider_name": "registry.terraform.io/aiven/aiven",
-          "schema_version": 1,
-          "values": {
+    "resource_changes": [
+      {
+        "address": "invalid.mine",
+        "mode": "managed",
+        "type": "invalid",
+        "name": "mine"
+      },
+      {
+        "address": "aiven_pg.pg",
+        "mode": "managed",
+        "type": "aiven_pg",
+        "name": "pg",
+        "provider_name": "registry.terraform.io/aiven/aiven",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
             "additional_disk_space": null,
             "cloud_name": "google-europe-west1",
             "disk_space": null,
@@ -141,9 +348,14 @@
               "update": "15m"
             }
           },
-          "sensitive_values": {
-            "components": [],
-            "pg": [],
+          "after_unknown": {
+            "components": true,
+            "disk_space_cap": true,
+            "disk_space_default": true,
+            "disk_space_step": true,
+            "disk_space_used": true,
+            "id": true,
+            "pg": true,
             "pg_user_config": [
               {
                 "ip_filter_object": [],
@@ -161,20 +373,60 @@
                 "timescaledb": []
               }
             ],
+            "service_host": true,
             "service_integrations": [],
+            "service_password": true,
+            "service_port": true,
+            "service_uri": true,
+            "service_username": true,
+            "state": true,
+            "static_ips": true,
+            "tag": [],
+            "timeouts": {}
+          },
+          "before_sensitive": false,
+          "after_sensitive": {
+            "components": [],
+            "pg": [],
+            "pg_user_config": [
+              {
+                "admin_password": true,
+                "ip_filter_object": [],
+                "migration": [],
+                "pg": [
+                  {}
+                ],
+                "pgbouncer": [],
+                "pglookout": [],
+                "private_access": [],
+                "privatelink_access": [],
+                "public_access": [
+                  {}
+                ],
+                "timescaledb": []
+              }
+            ],
+            "service_integrations": [],
+            "service_password": true,
+            "service_uri": true,
             "static_ips": [],
             "tag": [],
             "timeouts": {}
           }
-        },
-        {
-          "address": "aiven_pg_database.mydatabase",
-          "mode": "managed",
-          "type": "aiven_pg_database",
-          "name": "mydatabase",
-          "provider_name": "registry.terraform.io/aiven/aiven",
-          "schema_version": 0,
-          "values": {
+        }
+      },
+      {
+        "address": "aiven_pg_database.mydatabase",
+        "mode": "managed",
+        "type": "aiven_pg_database",
+        "name": "mydatabase",
+        "provider_name": "registry.terraform.io/aiven/aiven",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
             "database_name": "mydb",
             "lc_collate": null,
             "lc_ctype": null,
@@ -183,516 +435,266 @@
             "termination_protection": false,
             "timeouts": null
           },
-          "sensitive_values": {}
-        },
-        {
-          "address": "aiven_static_ip.pg1",
-          "mode": "managed",
-          "type": "aiven_static_ip",
-          "name": "pg1",
-          "provider_name": "registry.terraform.io/aiven/aiven",
-          "schema_version": 0,
-          "values": {
+          "after_unknown": {
+            "id": true
+          },
+          "before_sensitive": false,
+          "after_sensitive": {}
+        }
+      },
+      {
+        "address": "aiven_static_ip.pg1",
+        "mode": "managed",
+        "type": "aiven_static_ip",
+        "name": "pg1",
+        "provider_name": "registry.terraform.io/aiven/aiven",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
             "cloud_name": "google-europe-west1",
             "project": "hc-demo",
             "timeouts": null
           },
-          "sensitive_values": {}
-        },
-        {
-          "address": "aiven_static_ip.pg2",
-          "mode": "managed",
-          "type": "aiven_static_ip",
-          "name": "pg2",
-          "provider_name": "registry.terraform.io/aiven/aiven",
-          "schema_version": 0,
-          "values": {
+          "after_unknown": {
+            "id": true,
+            "ip_address": true,
+            "service_name": true,
+            "state": true,
+            "static_ip_address_id": true
+          },
+          "before_sensitive": false,
+          "after_sensitive": {}
+        }
+      },
+      {
+        "address": "aiven_static_ip.pg2",
+        "mode": "managed",
+        "type": "aiven_static_ip",
+        "name": "pg2",
+        "provider_name": "registry.terraform.io/aiven/aiven",
+        "change": {
+          "actions": [
+            "create"
+          ],
+          "before": null,
+          "after": {
             "cloud_name": "google-europe-west1",
             "project": "hc-demo",
             "timeouts": null
           },
-          "sensitive_values": {}
-        }
-      ]
-    }
-  },
-  "resource_changes": [
-    {
-      "address": "invalid.mine",
-      "mode": "managed",
-      "type": "invalid",
-      "name": "mine"
-    },
-    {
-      "address": "aiven_pg.pg",
-      "mode": "managed",
-      "type": "aiven_pg",
-      "name": "pg",
-      "provider_name": "registry.terraform.io/aiven/aiven",
-      "change": {
-        "actions": [
-          "create"
-        ],
-        "before": null,
-        "after": {
-          "additional_disk_space": null,
-          "cloud_name": "google-europe-west1",
-          "disk_space": null,
-          "maintenance_window_dow": "monday",
-          "maintenance_window_time": "10:00:00",
-          "pg_user_config": [
-            {
-              "additional_backup_regions": null,
-              "admin_password": null,
-              "admin_username": null,
-              "backup_hour": null,
-              "backup_minute": null,
-              "enable_ipv6": null,
-              "ip_filter": null,
-              "ip_filter_object": [],
-              "ip_filter_string": null,
-              "migration": [],
-              "pg": [
-                {
-                  "autovacuum_analyze_scale_factor": null,
-                  "autovacuum_analyze_threshold": null,
-                  "autovacuum_freeze_max_age": null,
-                  "autovacuum_max_workers": null,
-                  "autovacuum_naptime": null,
-                  "autovacuum_vacuum_cost_delay": null,
-                  "autovacuum_vacuum_cost_limit": null,
-                  "autovacuum_vacuum_scale_factor": null,
-                  "autovacuum_vacuum_threshold": null,
-                  "bgwriter_delay": null,
-                  "bgwriter_flush_after": null,
-                  "bgwriter_lru_maxpages": null,
-                  "bgwriter_lru_multiplier": null,
-                  "deadlock_timeout": null,
-                  "default_toast_compression": null,
-                  "idle_in_transaction_session_timeout": 900,
-                  "jit": null,
-                  "log_autovacuum_min_duration": null,
-                  "log_error_verbosity": null,
-                  "log_line_prefix": null,
-                  "log_min_duration_statement": -1,
-                  "log_temp_files": null,
-                  "max_files_per_process": null,
-                  "max_locks_per_transaction": null,
-                  "max_logical_replication_workers": null,
-                  "max_parallel_workers": null,
-                  "max_parallel_workers_per_gather": null,
-                  "max_pred_locks_per_transaction": null,
-                  "max_prepared_transactions": null,
-                  "max_replication_slots": null,
-                  "max_slot_wal_keep_size": null,
-                  "max_stack_depth": null,
-                  "max_standby_archive_delay": null,
-                  "max_standby_streaming_delay": null,
-                  "max_wal_senders": null,
-                  "max_worker_processes": null,
-                  "pg_partman_bgw__dot__interval": null,
-                  "pg_partman_bgw__dot__role": null,
-                  "pg_stat_monitor__dot__pgsm_enable_query_plan": null,
-                  "pg_stat_monitor__dot__pgsm_max_buckets": null,
-                  "pg_stat_statements__dot__track": null,
-                  "temp_file_limit": null,
-                  "timezone": null,
-                  "track_activity_query_size": null,
-                  "track_commit_timestamp": null,
-                  "track_functions": null,
-                  "track_io_timing": null,
-                  "wal_sender_timeout": null,
-                  "wal_writer_delay": null
-                }
-              ],
-              "pg_read_replica": null,
-              "pg_service_to_fork_from": null,
-              "pg_stat_monitor_enable": false,
-              "pg_version": "15",
-              "pgbouncer": [],
-              "pglookout": [],
-              "private_access": [],
-              "privatelink_access": [],
-              "project_to_fork_from": null,
-              "public_access": [
-                {
-                  "pg": true,
-                  "pgbouncer": null,
-                  "prometheus": false
-                }
-              ],
-              "recovery_target_time": null,
-              "service_to_fork_from": null,
-              "shared_buffers_percentage": null,
-              "static_ips": true,
-              "synchronous_replication": null,
-              "timescaledb": [],
-              "variant": null,
-              "work_mem": null
-            }
-          ],
-          "plan": "startup-4",
-          "project": "hc-demo",
-          "project_vpc_id": null,
-          "service_integrations": [],
-          "service_name": "pgdb-1",
-          "service_type": "pg",
-          "tag": [],
-          "termination_protection": null,
-          "timeouts": {
-            "create": "20m",
-            "default": null,
-            "delete": null,
-            "read": null,
-            "update": "15m"
-          }
-        },
-        "after_unknown": {
-          "components": true,
-          "disk_space_cap": true,
-          "disk_space_default": true,
-          "disk_space_step": true,
-          "disk_space_used": true,
-          "id": true,
-          "pg": true,
-          "pg_user_config": [
-            {
-              "ip_filter_object": [],
-              "migration": [],
-              "pg": [
-                {}
-              ],
-              "pgbouncer": [],
-              "pglookout": [],
-              "private_access": [],
-              "privatelink_access": [],
-              "public_access": [
-                {}
-              ],
-              "timescaledb": []
-            }
-          ],
-          "service_host": true,
-          "service_integrations": [],
-          "service_password": true,
-          "service_port": true,
-          "service_uri": true,
-          "service_username": true,
-          "state": true,
-          "static_ips": true,
-          "tag": [],
-          "timeouts": {}
-        },
-        "before_sensitive": false,
-        "after_sensitive": {
-          "components": [],
-          "pg": [],
-          "pg_user_config": [
-            {
-              "admin_password": true,
-              "ip_filter_object": [],
-              "migration": [],
-              "pg": [
-                {}
-              ],
-              "pgbouncer": [],
-              "pglookout": [],
-              "private_access": [],
-              "privatelink_access": [],
-              "public_access": [
-                {}
-              ],
-              "timescaledb": []
-            }
-          ],
-          "service_integrations": [],
-          "service_password": true,
-          "service_uri": true,
-          "static_ips": [],
-          "tag": [],
-          "timeouts": {}
+          "after_unknown": {
+            "id": true,
+            "ip_address": true,
+            "service_name": true,
+            "state": true,
+            "static_ip_address_id": true
+          },
+          "before_sensitive": false,
+          "after_sensitive": {}
         }
       }
-    },
-    {
-      "address": "aiven_pg_database.mydatabase",
-      "mode": "managed",
-      "type": "aiven_pg_database",
-      "name": "mydatabase",
-      "provider_name": "registry.terraform.io/aiven/aiven",
-      "change": {
-        "actions": [
-          "create"
-        ],
-        "before": null,
-        "after": {
-          "database_name": "mydb",
-          "lc_collate": null,
-          "lc_ctype": null,
-          "project": "hc-demo",
-          "service_name": "pgdb-1",
-          "termination_protection": false,
-          "timeouts": null
-        },
-        "after_unknown": {
-          "id": true
-        },
-        "before_sensitive": false,
-        "after_sensitive": {}
-      }
-    },
-    {
-      "address": "aiven_static_ip.pg1",
-      "mode": "managed",
-      "type": "aiven_static_ip",
-      "name": "pg1",
-      "provider_name": "registry.terraform.io/aiven/aiven",
-      "change": {
-        "actions": [
-          "create"
-        ],
-        "before": null,
-        "after": {
-          "cloud_name": "google-europe-west1",
-          "project": "hc-demo",
-          "timeouts": null
-        },
-        "after_unknown": {
-          "id": true,
-          "ip_address": true,
-          "service_name": true,
-          "state": true,
-          "static_ip_address_id": true
-        },
-        "before_sensitive": false,
-        "after_sensitive": {}
-      }
-    },
-    {
-      "address": "aiven_static_ip.pg2",
-      "mode": "managed",
-      "type": "aiven_static_ip",
-      "name": "pg2",
-      "provider_name": "registry.terraform.io/aiven/aiven",
-      "change": {
-        "actions": [
-          "create"
-        ],
-        "before": null,
-        "after": {
-          "cloud_name": "google-europe-west1",
-          "project": "hc-demo",
-          "timeouts": null
-        },
-        "after_unknown": {
-          "id": true,
-          "ip_address": true,
-          "service_name": true,
-          "state": true,
-          "static_ip_address_id": true
-        },
-        "before_sensitive": false,
-        "after_sensitive": {}
-      }
-    }
-  ],
-  "configuration": {
-    "provider_config": {
-      "aiven": {
-        "name": "aiven",
-        "full_name": "registry.terraform.io/aiven/aiven",
-        "version_constraint": "4.9.3"
-      }
-    },
-    "root_module": {
-      "resources": [
-        {
-          "address": "aiven_pg.pg",
-          "mode": "managed",
-          "type": "aiven_pg",
-          "name": "pg",
-          "provider_config_key": "aiven",
-          "expressions": {
-            "cloud_name": {
-              "references": [
-                "var.cloud_name"
-              ]
-            },
-            "maintenance_window_dow": {
-              "constant_value": "monday"
-            },
-            "maintenance_window_time": {
-              "constant_value": "10:00:00"
-            },
-            "pg_user_config": [
-              {
-                "pg": [
-                  {
-                    "idle_in_transaction_session_timeout": {
-                      "constant_value": 900
-                    },
-                    "log_min_duration_statement": {
-                      "constant_value": -1
-                    }
-                  }
-                ],
-                "pg_version": {
-                  "constant_value": 15
-                },
-                "public_access": [
-                  {
-                    "pg": {
-                      "constant_value": true
-                    },
-                    "prometheus": {
-                      "constant_value": false
-                    }
-                  }
-                ],
-                "static_ips": {
-                  "constant_value": true
-                }
-              }
-            ],
-            "plan": {
-              "references": [
-                "var.plan"
-              ]
-            },
-            "project": {
-              "references": [
-                "var.project"
-              ]
-            },
-            "service_name": {
-              "references": [
-                "var.service_name"
-              ]
-            },
-            "static_ips": {
-              "references": [
-                "aiven_static_ip.pg1.static_ip_address_id",
-                "aiven_static_ip.pg1",
-                "aiven_static_ip.pg2.static_ip_address_id",
-                "aiven_static_ip.pg2"
-              ]
-            },
-            "timeouts": {
-              "create": {
-                "constant_value": "20m"
+    ],
+    "configuration": {
+      "provider_config": {
+        "aiven": {
+          "name": "aiven",
+          "full_name": "registry.terraform.io/aiven/aiven",
+          "version_constraint": "4.9.3"
+        }
+      },
+      "root_module": {
+        "resources": [
+          {
+            "address": "aiven_pg.pg",
+            "mode": "managed",
+            "type": "aiven_pg",
+            "name": "pg",
+            "provider_config_key": "aiven",
+            "expressions": {
+              "cloud_name": {
+                "references": [
+                  "var.cloud_name"
+                ]
               },
-              "update": {
-                "constant_value": "15m"
+              "maintenance_window_dow": {
+                "constant_value": "monday"
+              },
+              "maintenance_window_time": {
+                "constant_value": "10:00:00"
+              },
+              "pg_user_config": [
+                {
+                  "pg": [
+                    {
+                      "idle_in_transaction_session_timeout": {
+                        "constant_value": 900
+                      },
+                      "log_min_duration_statement": {
+                        "constant_value": -1
+                      }
+                    }
+                  ],
+                  "pg_version": {
+                    "constant_value": 15
+                  },
+                  "public_access": [
+                    {
+                      "pg": {
+                        "constant_value": true
+                      },
+                      "prometheus": {
+                        "constant_value": false
+                      }
+                    }
+                  ],
+                  "static_ips": {
+                    "constant_value": true
+                  }
+                }
+              ],
+              "plan": {
+                "references": [
+                  "var.plan"
+                ]
+              },
+              "project": {
+                "references": [
+                  "var.project"
+                ]
+              },
+              "service_name": {
+                "references": [
+                  "var.service_name"
+                ]
+              },
+              "static_ips": {
+                "references": [
+                  "aiven_static_ip.pg1.static_ip_address_id",
+                  "aiven_static_ip.pg1",
+                  "aiven_static_ip.pg2.static_ip_address_id",
+                  "aiven_static_ip.pg2"
+                ]
+              },
+              "timeouts": {
+                "create": {
+                  "constant_value": "20m"
+                },
+                "update": {
+                  "constant_value": "15m"
+                }
               }
-            }
-          },
-          "schema_version": 1
-        },
-        {
-          "address": "aiven_pg_database.mydatabase",
-          "mode": "managed",
-          "type": "aiven_pg_database",
-          "name": "mydatabase",
-          "provider_config_key": "aiven",
-          "expressions": {
-            "database_name": {
-              "references": [
-                "var.db_name"
-              ]
             },
-            "project": {
-              "references": [
-                "var.project"
-              ]
-            },
-            "service_name": {
-              "references": [
-                "aiven_pg.pg.service_name",
-                "aiven_pg.pg"
-              ]
-            }
+            "schema_version": 1
           },
-          "schema_version": 0
-        },
-        {
-          "address": "aiven_static_ip.pg1",
-          "mode": "managed",
-          "type": "aiven_static_ip",
-          "name": "pg1",
-          "provider_config_key": "aiven",
-          "expressions": {
-            "cloud_name": {
-              "references": [
-                "var.cloud_name"
-              ]
+          {
+            "address": "aiven_pg_database.mydatabase",
+            "mode": "managed",
+            "type": "aiven_pg_database",
+            "name": "mydatabase",
+            "provider_config_key": "aiven",
+            "expressions": {
+              "database_name": {
+                "references": [
+                  "var.db_name"
+                ]
+              },
+              "project": {
+                "references": [
+                  "var.project"
+                ]
+              },
+              "service_name": {
+                "references": [
+                  "aiven_pg.pg.service_name",
+                  "aiven_pg.pg"
+                ]
+              }
             },
-            "project": {
-              "references": [
-                "var.project"
-              ]
-            }
+            "schema_version": 0
           },
-          "schema_version": 0
-        },
-        {
-          "address": "aiven_static_ip.pg2",
-          "mode": "managed",
-          "type": "aiven_static_ip",
-          "name": "pg2",
-          "provider_config_key": "aiven",
-          "expressions": {
-            "cloud_name": {
-              "references": [
-                "var.cloud_name"
-              ]
+          {
+            "address": "aiven_static_ip.pg1",
+            "mode": "managed",
+            "type": "aiven_static_ip",
+            "name": "pg1",
+            "provider_config_key": "aiven",
+            "expressions": {
+              "cloud_name": {
+                "references": [
+                  "var.cloud_name"
+                ]
+              },
+              "project": {
+                "references": [
+                  "var.project"
+                ]
+              }
             },
-            "project": {
-              "references": [
-                "var.project"
-              ]
-            }
+            "schema_version": 0
           },
-          "schema_version": 0
-        }
-      ],
-      "variables": {
-        "cloud_name": {
-          "default": "google-europe-west1"
-        },
-        "db_name": {
-          "default": "mydb"
-        },
-        "plan": {
-          "default": "startup-4"
-        },
-        "project": {
-          "default": "hc-demo"
-        },
-        "service_name": {
-          "default": "pgdb-1"
+          {
+            "address": "aiven_static_ip.pg2",
+            "mode": "managed",
+            "type": "aiven_static_ip",
+            "name": "pg2",
+            "provider_config_key": "aiven",
+            "expressions": {
+              "cloud_name": {
+                "references": [
+                  "var.cloud_name"
+                ]
+              },
+              "project": {
+                "references": [
+                  "var.project"
+                ]
+              }
+            },
+            "schema_version": 0
+          }
+        ],
+        "variables": {
+          "cloud_name": {
+            "default": "google-europe-west1"
+          },
+          "db_name": {
+            "default": "mydb"
+          },
+          "plan": {
+            "default": "startup-4"
+          },
+          "project": {
+            "default": "hc-demo"
+          },
+          "service_name": {
+            "default": "pgdb-1"
+          }
         }
       }
-    }
-  },
-  "relevant_attributes": [
-    {
-      "resource": "aiven_static_ip.pg1",
-      "attribute": [
-        "static_ip_address_id"
-      ]
     },
-    {
-      "resource": "aiven_static_ip.pg2",
-      "attribute": [
-        "static_ip_address_id"
-      ]
-    },
-    {
-      "resource": "aiven_pg.pg",
-      "attribute": [
-        "service_name"
-      ]
-    }
-  ],
-  "timestamp": "2023-12-11T07:14:38Z"
+    "relevant_attributes": [
+      {
+        "resource": "aiven_static_ip.pg1",
+        "attribute": [
+          "static_ip_address_id"
+        ]
+      },
+      {
+        "resource": "aiven_static_ip.pg2",
+        "attribute": [
+          "static_ip_address_id"
+        ]
+      },
+      {
+        "resource": "aiven_pg.pg",
+        "attribute": [
+          "service_name"
+        ]
+      }
+    ],
+    "timestamp": "2023-12-11T07:14:38Z"
+  }
 }

@@ -2,7 +2,7 @@ package terraform.selfserve
 
 import future.keywords.in
 import future.keywords.contains
-import input as tfplan
+import input.plan as tfplan
 
 # the allowed plans that can be used for resources
 plans := ["startup-4"]
