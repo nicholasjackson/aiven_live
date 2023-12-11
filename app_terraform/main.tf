@@ -5,6 +5,14 @@ terraform {
       version = "4.9.3"
     }
   }
+  
+  backend "remote" {
+    organization = "niccorp"
+
+    workspaces {
+      name = "aiven_live"
+    }
+  }
 }
 
 resource "aiven_static_ip" "pg1" {
