@@ -15,6 +15,11 @@ terraform {
   }
 }
 
+# Required for NoCode modules
+provider "aiven" {
+  # Configuration options
+}
+
 resource "aiven_static_ip" "pg1" {
   project    = var.project
   cloud_name = var.cloud_name
